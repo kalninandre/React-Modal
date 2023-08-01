@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Raleway:wght@400;500&family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	box-sizing: border-box;
+	font-size: 18px;
+	font-family: 'Roboto Condensed', sans-serif;
+	padding: 0px;
+	margin: 0px;
+}
+
+.backdrop {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+td {
+	@apply px-3 py-2 text-left;
+}
