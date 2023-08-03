@@ -21,6 +21,42 @@ function App() {
 			quantity: 2,
 			price: 4,
 		},
+		{
+			id: 4,
+			name: 'Arroz',
+			quantity: 1,
+			price: 3,
+		},
+		{
+			id: 5,
+			name: 'Feijão',
+			quantity: 1,
+			price: 5,
+		},
+		{
+			id: 6,
+			name: 'Chocolate',
+			quantity: 2,
+			price: 4,
+		},
+		{
+			id: 7,
+			name: 'Arroz',
+			quantity: 1,
+			price: 3,
+		},
+		{
+			id: 8,
+			name: 'Feijão',
+			quantity: 1,
+			price: 5,
+		},
+		{
+			id: 9,
+			name: 'Chocolate',
+			quantity: 2,
+			price: 4,
+		},
 	]);
 
 	return (
@@ -70,68 +106,12 @@ function App() {
 										<tbody>
 											{data.map((i, index) => {
 												return (
-													<div>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-														<tr className='border-b' key={index}>
-															<td>{i.id}</td>
-															<td>{i.name}</td>
-															<td>{i.quantity}</td>
-															<td>{i.price}</td>
-														</tr>
-													</div>
+													<tr className='border-b' key={index}>
+														<td>{i.id}</td>
+														<td>{i.name}</td>
+														<td>{i.quantity}</td>
+														<td>{i.price}</td>
+													</tr>
 												);
 											})}
 										</tbody>
