@@ -5,7 +5,7 @@ type ModalContainerProps = {
 };
 
 const Container = ({ children }: ModalContainerProps) => {
-	return <div className='content-container'>{children}</div>;
+	return <div className='modal-content-container'>{children}</div>;
 };
 
 export default Container;

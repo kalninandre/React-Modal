@@ -6,6 +6,7 @@
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.6);
 	overflow: hidden;
+	z-index: 10;
 }
 
 .backdrop-centralizer {
@@ -19,17 +20,17 @@
 		position: relative;
 		background-color: var(--white);
 		border-radius: 6px;
-	}
 
-	.modal-closer {
-		position: absolute;
-		color: white;
-		top: 6px;
-		right: 0px;
+		.modal-closer {
+			position: absolute;
+			color: white;
+			top: 6px;
+			right: 0px;
+		}
 	}
 }
 
-.content-container {
+.modal-content-container {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -57,12 +58,6 @@
 		margin: 12px;
 		height: 100%;
 		overflow: auto;
-
-		.modal-content-centralizer {
-			display: flex;
-			justify-content: center;
-			width: 100%;
-		}
 	}
 
 	.actions {

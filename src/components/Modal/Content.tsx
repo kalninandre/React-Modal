@@ -3,11 +3,7 @@ type ModalContentProps = {
 };
 
 const Content = ({ children }: ModalContentProps) => {
-	return (
-		<div className='modal-content'>
-			<div className='modal-content-centralizer'>{children}</div>
-		</div>
-	);
+	return <div className='modal-content'>{children}</div>;
 };
 
 export default Content;
