@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Modal } from '../components/Index';
 
 function App() {
-	const [isOpen, setIsOpen] = useState(false);
-
 	const [data] = useState([
 		{
 			id: 1,
@@ -24,10 +22,6 @@ function App() {
 			price: 4,
 		},
 	]);
-
-	const openModal = () => {
-		setIsOpen(prev => !prev);
-	};
 
 	return (
 		<>
@@ -57,13 +51,13 @@ function App() {
 						</tbody>
 					</table>
 					<div className='flex mt-4'>
-						<button className='bg-green text-white p-2' onClick={openModal}>
-							Open modal
-						</button>
+						<Modal.Root>
+							<button className='trigger bg-green text-white p-2'>Open modal</button>
+							<Modal.Header>Título do Modal</Modal.Header>
+						</Modal.Root>
 					</div>
 				</div>
 			</div>
-			<Modal isOpen={isOpen}>Hello World</Modal>
 		</>
 	);
 }
