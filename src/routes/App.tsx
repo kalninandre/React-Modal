@@ -50,10 +50,103 @@ function App() {
 							})}
 						</tbody>
 					</table>
+
 					<div className='flex mt-4'>
-						<Modal.Root>
+						<Modal.Root width={640} height={440}>
 							<button className='trigger bg-green text-white p-2'>Open modal</button>
-							<Modal.Header>Título do Modal</Modal.Header>
+							<Modal.Container>
+								<Modal.Header>Título do Modal</Modal.Header>
+								<Modal.Content>
+									<table>
+										<thead>
+											<tr className='border-b'>
+												<td>#</td>
+												<td>Nome</td>
+												<td>Quantidade</td>
+												<td>Preço</td>
+											</tr>
+										</thead>
+
+										<tbody>
+											{data.map((i, index) => {
+												return (
+													<div>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.name}</td>
+															<td>{i.quantity}</td>
+															<td>{i.price}</td>
+														</tr>
+													</div>
+												);
+											})}
+										</tbody>
+									</table>
+								</Modal.Content>
+								<Modal.Actions>
+									<Modal.Action color='blue'>Ação</Modal.Action>
+									<Modal.Action color='red'>Cancelar</Modal.Action>
+									<Modal.Action onClick={() => console.log('Hello World')} color='yellow'>
+										Continuar
+									</Modal.Action>
+									<Modal.Action className='close-modal'>Fechar</Modal.Action>
+								</Modal.Actions>
+								<Modal.Footer>Footer</Modal.Footer>
+							</Modal.Container>
 						</Modal.Root>
 					</div>
 				</div>

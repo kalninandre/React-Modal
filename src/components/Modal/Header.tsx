@@ -1,8 +1,8 @@
-type ModalHealder = {
+type ModalHeaderProps = {
 	children: React.ReactNode;
 };
 
-const Header = ({ children }: ModalHealder) => {
+const Header = ({ children }: ModalHeaderProps) => {
 	return <div className='header'>{children}</div>;
 };
 

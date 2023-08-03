@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import './modal.scss';
 
-type ModalProps = {
+type ModalRootProps = {
 	children: React.ReactNode[];
+	width: number;
+	height: number;
 };
 
-const Root = ({ children }: ModalProps) => {
+const Root = ({ width, height, children }: ModalRootProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	let trigger, content;
@@ -21,9 +23,13 @@ const Root = ({ children }: ModalProps) => {
 			<div onClick={() => setIsOpen(true)}>{trigger}</div>
 			{isOpen && (
 				<div className='backdrop' onClick={() => setIsOpen(false)}>
-					<div className='content-container'>
-						<div className='content' onClick={event => event.stopPropagation()}>
-							<div className='close-content'>
+					<div className='backdrop-centralizer'>
+						<div
+							className='modal-container'
+							style={{ width, height }}
+							onClick={event => event.stopPropagation()}
+						>
+							<div className='modal-closer'>
 								<i className='bi bi-x text-2xl p-2 cursor-pointer' onClick={() => setIsOpen(false)}></i>
 							</div>
 							{content}
