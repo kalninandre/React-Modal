@@ -1,75 +1,23 @@
-import { useState } from 'react';
 import { Modal } from '../components/Index';
+import json from '../assets/data.json';
 
 function App() {
-	const [data] = useState([
-		{
-			id: 1,
-			name: 'Arroz',
-			quantity: 1,
-			price: 3,
-		},
-		{
-			id: 2,
-			name: 'Feijão',
-			quantity: 1,
-			price: 5,
-		},
-		{
-			id: 3,
-			name: 'Chocolate',
-			quantity: 2,
-			price: 4,
-		},
-		{
-			id: 4,
-			name: 'Arroz',
-			quantity: 1,
-			price: 3,
-		},
-		{
-			id: 5,
-			name: 'Feijão',
-			quantity: 1,
-			price: 5,
-		},
-		{
-			id: 6,
-			name: 'Chocolate',
-			quantity: 2,
-			price: 4,
-		},
-		{
-			id: 7,
-			name: 'Arroz',
-			quantity: 1,
-			price: 3,
-		},
-		{
-			id: 8,
-			name: 'Feijão',
-			quantity: 1,
-			price: 5,
-		},
-		{
-			id: 9,
-			name: 'Chocolate',
-			quantity: 2,
-			price: 4,
-		},
-	]);
+	const data = json;
 
 	return (
 		<>
-			<div className='w-screen h-screen'>
-				<div className='flex flex-col justify-center items-center h-full'>
+			<header className='flex items-center w-full h-[48px] bg-green text-white p-2'>
+				<div>React Modal Example</div>
+			</header>
+			<div className='min-w-[100%] min-h-[100%] mt-4'>
+				<div className='flex flex-col justify-center items-center'>
 					<table>
 						<thead>
 							<tr className='border-b'>
 								<td>#</td>
-								<td>Nome</td>
-								<td>Quantidade</td>
-								<td>Preço</td>
+								<td>Task</td>
+								<td>User Id</td>
+								<td>Completed</td>
 							</tr>
 						</thead>
 
@@ -78,9 +26,15 @@ function App() {
 								return (
 									<tr className='border-b' key={index}>
 										<td>{i.id}</td>
-										<td>{i.name}</td>
-										<td>{i.quantity}</td>
-										<td>{i.price}</td>
+										<td>{i.todo}</td>
+										<td>{i.userId}</td>
+										<td>
+											<input
+												className='w-[14px] h-[14px]'
+												type='checkbox'
+												defaultChecked={i.completed}
+											/>
+										</td>
 									</tr>
 								);
 							})}
@@ -88,49 +42,60 @@ function App() {
 					</table>
 
 					<div className='flex mt-4'>
-						<Modal.Root width={640} height={440}>
+						<Modal.Root width={'1024px'} height={'768px'}>
 							<button className='trigger bg-green text-white p-2'>Open modal</button>
 							<Modal.Container>
-								<Modal.Header>Título do Modal</Modal.Header>
+								<Modal.Header>Modal Header</Modal.Header>
 								<Modal.Content>
-									<table>
-										<thead>
-											<tr className='border-b'>
-												<td>#</td>
-												<td>Nome</td>
-												<td>Quantidade</td>
-												<td>Preço</td>
-											</tr>
-										</thead>
+									<div className='flex justify-center'>
+										<table>
+											<thead>
+												<tr className='border-b'>
+													<td>#</td>
+													<td>Task</td>
+													<td>User Id</td>
+													<td>Completed</td>
+												</tr>
+											</thead>
 
-										<tbody>
-											{data.map((i, index) => {
-												return (
-													<tr className='border-b' key={index}>
-														<td>{i.id}</td>
-														<td>{i.name}</td>
-														<td>{i.quantity}</td>
-														<td>{i.price}</td>
-													</tr>
-												);
-											})}
-										</tbody>
-									</table>
+											<tbody>
+												{data.map((i, index) => {
+													return (
+														<tr className='border-b' key={index}>
+															<td>{i.id}</td>
+															<td>{i.todo}</td>
+															<td>{i.userId}</td>
+															<td>
+																<input
+																	className='w-[14px] h-[14px]'
+																	type='checkbox'
+																	defaultChecked={i.completed}
+																/>
+															</td>
+														</tr>
+													);
+												})}
+											</tbody>
+										</table>
+									</div>
 								</Modal.Content>
 								<Modal.Actions>
-									<Modal.Action color='blue'>Ação</Modal.Action>
-									<Modal.Action color='red'>Cancelar</Modal.Action>
+									<Modal.Action className='close-modal'>Close</Modal.Action>
+									<Modal.Action color='red'>Cancel</Modal.Action>
+									<Modal.Action color='green'>Action</Modal.Action>
 									<Modal.Action onClick={() => console.log('Hello World')} color='yellow'>
 										Continuar
 									</Modal.Action>
-									<Modal.Action className='close-modal'>Fechar</Modal.Action>
 								</Modal.Actions>
-								<Modal.Footer>Footer</Modal.Footer>
+								<Modal.Footer>Modal Footer</Modal.Footer>
 							</Modal.Container>
 						</Modal.Root>
 					</div>
 				</div>
 			</div>
+			<footer className='flex items-center w-full h-[48px] bg-green text-white p-2 mt-4'>
+				<div>React Modal Footer</div>
+			</footer>
 		</>
 	);
 }

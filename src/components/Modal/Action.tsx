@@ -1,6 +1,8 @@
 import { tv } from 'tailwind-variants';
 import { twMerge } from 'tailwind-merge';
 
+import { useModal } from '@components/Modal/Root';
+
 type ModalActionProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	children: React.ReactNode;
 	color?: 'default' | 'blue' | 'green' | 'yellow' | 'red' | undefined;
@@ -23,11 +25,13 @@ const button = tv({
 });
 
 const Action = ({ children, color, className, ...props }: ModalActionProps) => {
+	const { setIsOpen } = useModal();
+
 	if (className && className.includes('close-modal')) {
 		setTimeout(() => {
 			jQuery('button.close-modal').on('click', function () {
 				jQuery(this).off('click');
-				jQuery('.backdrop').trigger('click');
+				setIsOpen(false);
 			});
 		});
 	}
